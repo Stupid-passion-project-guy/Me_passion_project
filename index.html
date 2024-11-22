@@ -1,140 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Adam’s passion project</title>
-
-
-   <!-- Favicon -->
-   <link rel="icon" href="heheheha.png" type="image/png">
-
-
-   <!-- Google Fonts -->
-   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
-
-
-   <style>
-       body {
-           font-family: 'Comic Neue', sans-serif;
-           text-align: center;
-           background-color: black;
-           color: white;
-           margin: 0;
-           padding: 20px;
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-       }
-       h1, h2 {
-           color: white;
-       }
-       nav {
-           margin-bottom: 20px;
-       }
-       nav a {
-           color: white;
-           text-decoration: none;
-           font-weight: bold;
-           margin: 0 15px;
-           padding: 10px 20px;
-           background-color: #9c00fc;
-           border-radius: 5px;
-       }
-       nav a:hover {
-           background-color: #7205b5;
-       }
-       .game-container {
-           display: flex;
-           flex-wrap: wrap;
-           justify-content: center;
-           gap: 20px; /* Space between tiles */
-       }
-       .game-button {
-           background-color: #9c00fc;
-           color: white;
-           border: none;
-           border-radius: 10px;
-           padding: 20px 30px;
-           font-size: 16px;
-           cursor: pointer;
-           transition: background-color 0.3s;
-           width: 150px; /* Fixed width for buttons */
-           height: 100px; /* Fixed height for buttons */
-           display: flex;
-           align-items: center;
-           justify-content: center;
-           text-align: center;
-           font-family: 'Comic Neue', sans-serif; /* Ensure font applies to buttons */
-       }
-       .game-button:hover {
-           background-color: #FF9500;
-       }
-   </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adam’s Passion Project</title>
+  <link rel="icon" href="download.png" type="image/png">
+  <style>
+    body {
+      font-family: 'Comic Neue', sans-serif;
+      text-align: center;
+      background-color: black;
+      color: white;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1, h2, h3 {
+      color: white;
+    }
+    h3 {
+      color: #FF9500;
+    }
+    nav {
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 15px;
+      padding: 10px 20px;
+      background-color: #1a1a1a;
+      border-radius: 5px;
+    }
+    nav a:hover {
+      background-color: #FF9500;
+    }
+    .game-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .game-button {
+      background-color: #1a1a1a;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 20px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 150px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: 'Comic Neue', sans-serif;
+    }
+    .game-button:hover {
+      background-color: #FF9500;
+    }
+    .random-button {
+      background-color: #1a1a1a;
+      color: white;
+      background-image: url('HardR.jpeg');
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .random-button:hover {
+      opacity: 0.75;
+    }
+    #chatbot-container {
+      background-color: #1a1a1a;
+      color: white;
+      border: 2px solid #FF9500;
+      border-radius: 10px;
+      width: 300px;
+      max-height: 400px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      transition: max-height 0.3s ease;
+    }
+    #chatbot-header {
+      background-color: #FF9500;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+    }
+    #chatbot-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+    }
+    #chatbot-input-container {
+      display: flex;
+      padding: 10px;
+      background-color: #1a1a1a;
+    }
+    #chatbot-input {
+      flex: 1;
+      padding: 5px;
+      border: 1px solid #FF9500;
+      border-radius: 5px;
+    }
+    #chatbot-send {
+      margin-left: 5px;
+      padding: 5px 10px;
+      background-color: #FF9500;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
+  <h1>Adam’s Game Site</h1>
+  <h2>Please don’t sue me</h2>
+  <h3>(I can’t afford a lawyer)</h3>
+
+  <nav>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSepODwodpd9BccmLqWlnkRr0r3QpigU-TmtBQ2SF2wLzssXcg/viewform?usp=sf_link" target="_blank">Game Request Form</a>
+  </nav>
+
+  <div id="game-launcher" class="game-container">
+    <!-- Game Buttons -->
+    <button class="game-button" onclick="launchGame('https://frivez.com/')">Frivez</button>
+    <button class="game-button" onclick="launchGame('https://sites.google.com/view/games-az/slope')">Slope</button>
+    <button class="game-button" onclick="launchGame('https://shsgames.github.io/#google_vignette')">SHS Games</button>
+    <button class="game-button" onclick="launchGame('https://experimonkey.com/')">Experimonkey</button>
+    <button class="game-button" onclick="launchGame('https://arcadespot.com/')">Arcade Spot</button>
+    <button class="game-button" onclick="launchGame('https://retrobowl.me/')">Retro Bowl</button>
+    <button class="game-button" onclick="launchGame('https://thepizzaedition.github.io/g/')">The Pizza Edition</button>
+    <button class="game-button" onclick="launchGame('https://slopeio.org/')">Slope.io</button>
+    <button class="game-button" onclick="launchGame('https://retrogames.cc/#google_vignette')">Retro Games</button>
+    <button class="game-button" onclick="launchGame('https://scratch.mit.edu/')">Scratch</button>
+    <button class="game-button" onclick="launchGame('https://games-and-stuff.vercel.app/')">Games & Stuff</button>    
+    <button class="game-button" onclick="launchGame('https://geometryspot.com/activities/')">Geometry Spot</button>
+    <button class="game-button" onclick="launchGame('https://scuffeduno.online/menu/main')">Scuffed Uno</button>
+    <button class="game-button" onclick="launchGame('https://iogames.onl/')">IO Games</button>
+    <button class="game-button" onclick="launchGame('https://slopeonline.online/')">Slope Online</button>
+  </div>
+
+  <button class="random-button" onclick="goToRandomLink()">Play a Random Game</button>
 
 
-   <h1>Adam's game launcher</h1>
-   <h2>Please don't sue me</h2>
-   <h3>(I can't afford a lawer)</h3>
+<!-- Chatbot Section -->
+<div id="chatbot-container">
+  <div id="chatbot-header">Chat with da bot!</div>
+  <div id="chatbot-messages"></div>
+  <div id="chatbot-input-container">
+    <input id="chatbot-input" type="text" placeholder="Type a message...">
+    <button id="chatbot-send">>Click<</button>
+  </div>
+</div>
 
+<script>
+  function launchGame(url) {
+    window.open(url, '_blank');
+  }
 
-   <!-- Navigation Bar -->
-   <nav>
-       <a href="#game-launcher">Game Launcher</a>
-       <a href="https://forms.gle/N2GbHVUpFtjyJc5K6" target="_blank">Game Request</a>
-       <a href="soundboards.html">Soundboards</a> <!-- Link to the new soundboards page -->
-       <a href="TV-watching.html">TV</a>
-   </nav>
+  const gameLinks = [
+    "https://frivez.com/",
+    "https://sites.google.com/view/games-az/slope",
+    "https://shsgames.github.io/#google_vignette",
+    "https://experimonkey.com/",
+    "https://arcadespot.com/",
+    "https://retrobowl.me/",
+    "https://slopeio.org/",
+    "https://retrogames.cc/#google_vignette"
+  ];
 
+  function goToRandomLink() {
+    const randomIndex = Math.floor(Math.random() * gameLinks.length);
+    window.open(gameLinks[randomIndex], '_blank');
+  }
 
-   <!-- Game Launcher Section -->
-   <div id="game-launcher" class="game-container">
-   <button class="game-button" onclick="launchGame('https://playminigames.net/')">Play Mini Games</button>
-      <button class="game-button" onclick="launchGame('https://frivez.com/')">Frivez</button>
-      <button class="game-button" onclick="launchGame('https://sites.google.com/view/games-az/slope')">Slope</button>
-      <button class="game-button" onclick="launchGame('https://shsgames.github.io/#google_vignette')">SHS Games</button>
-      <button class="game-button" onclick="launchGame('https://leveldevil.io/')">Level Devil</button>
-      <button class="game-button" onclick="launchGame('https://weblfg.com/')">WebLFG</button>
-      <button class="game-button" onclick="launchGame('https://drifthunters2.io/')">Drift Hunters 2</button>
-      <button class="game-button" onclick="launchGame('https://experimonkey.com/')">Experimonkey</button>
-      <button class="game-button" onclick="launchGame('https://coolmathgames.com/')">Coolmath Games</button>
-      <button class="game-button" onclick="launchGame('https://emulatorgames.net/')">Emulator Games</button>
-      <button class="game-button" onclick="launchGame('https://arcadespot.com/')">Arcade Spot</button>
-      <button class="game-button" onclick="launchGame('https://fyregames.com/')">Fyre Games</button>
-      <button class="game-button" onclick="launchGame('https://retrobowl.me/')">Retro Bowl</button>
-      <button class="game-button" onclick="launchGame('https://thepizzaedition.github.io/g/tabs/')">Pizza Edition: TABS</button>
-      <button class="game-button" onclick="launchGame('https://krunker.io/?game=DAL:izsxh')">Krunker</button>
-      <button class="game-button" onclick="launchGame('https://dinoswords.gg/')">Dino Swords</button>
-      <button class="game-button" onclick="launchGame('https://slopeio.org/')">Slope.io</button>
-      <button class="game-button" onclick="launchGame('https://retrogames.cc/#google_vignette')">Retro Games</button>
-      <button class="game-button" onclick="launchGame('https://scratch.mit.edu/')">Scratch</button>
-      <button class="game-button" onclick="launchGame('https://games-and-stuff.vercel.app/')">Games & Stuff</button>
-      <button class="game-button" onclick="launchGame('https://warbot.io/')">Warbot.io</button>
-      <button class="game-button" onclick="launchGame('https://freetogame.com/')">Free To Game</button>
-      <button class="game-button" onclick="launchGame('https://buckshotroulette.com/build-now-gg')">Build Now GG</button>
-      <button class="game-button" onclick="launchGame('https://geometryspot.com/activities/')">Geometry Spot</button>
-      <button class="game-button" onclick="launchGame('https://scuffeduno.online/menu/main')">Scuffed Uno</button>
-      <button class="game-button" onclick="launchGame('https://thepizzaedition.github.io/all/')">All Pizza Edition Games</button>
-      <button class="game-button" onclick="launchGame('https://band.us/')">Band</button>
-      <button class="game-button" onclick="launchGame('https://iogames.onl/')">IO Games</button>
-      <button class="game-button" onclick="launchGame('https://slopeonline.online/')">Slope Online</button>
-      <button class="game-button" onclick="launchGame('https://geo-fs.com/geofs.php?v=3.82')">Geo-FS</button>
-      <button class="game-button" onclick="launchGame('https://stormyskitten.github.io/CookieClickerUnblocked')">Cookie Clicker</button>
-      <button class="game-button" onclick="launchGame('https://moto-x3m.net')">Moto X3M</button>
-      <button class="game-button" onclick="launchGame('https://eaglercraft.q13x.com/')">Eaglercraft</button>
-      <button class="game-button" onclick="launchGame('https://henrystickmin.io/infiltrating-the-airship')">infiltrating the Airship</button>
-   </div>
+  const chatbotMessages = document.getElementById("chatbot-messages");
+  const chatbotInput = document.getElementById("chatbot-input");
+  const chatbotSend = document.getElementById("chatbot-send");
+  const chatbotHeader = document.getElementById("chatbot-header");
 
+  const responses = {
+    greeting: ["Hi there!", "Hello!", "Hey! What's up?", "Hi!"],
+    farewell: ["Goodbye!", "See you later!", "Take care!", "Bye!"],
+    jokes: [
+      "Why don't scientists trust atoms? Because they make up everything!",
+      "Why was the math book sad? It had too many problems.",
+      "Why did the scarecrow win an award? Because he was outstanding in his field!",
+      "Why did the tomato turn red? Because it saw the salad dressing!",
+      "What do you call fake spaghetti? An impasta!"
+    ],
+    default: [
+      "That's interesting!",
+      "I don't know about that.",
+      "Can you tell me more?",
+      "I don't know how to respond to that.",
+      "I wasn't programmed to respond to that."
+    ]
+  };
 
-   <script>
-       function launchGame(url) {
-           window.open(url, '_blank'); // Open game in a new tab
-       }
-   </script>
-</body>
-</html>
+  function addMessage(content, isUser = false) {
+    const message = document.createElement("div");
+    message.textContent = content;
+    message.style.margin = "5px 0";
+    message.style.textAlign = isUser ? "right" : "left";
+    chatbotMessages.appendChild(message);
+    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+  }
 
+  chatbotSend.addEventListener("click", () => {
+    const userMessage = chatbotInput.value.trim();
+    if (!userMessage) return;
+    addMessage(userMessage, true);
+    chatbotInput.value = "";
 
+    let response;
+    if (userMessage.toLowerCase().includes("hi") || userMessage.toLowerCase().includes("hello")) {
+      response = responses.greeting[Math.floor(Math.random() * responses.greeting.length)];
+    } else if (userMessage.toLowerCase().includes("bye")) {
+      response = responses.farewell[Math.floor(Math.random() * responses.farewell.length)];
+    } else if (userMessage.toLowerCase().includes("joke") || userMessage.toLowerCase().includes("funny")) {
+      response = responses.jokes[Math.floor(Math.random() * responses.jokes.length)];
+    } else {
+      response = responses.default[Math.floor(Math.random() * responses.default.length)];
+    }
+    setTimeout(() => addMessage(response), 500);
+  });
 
+  chatbotHeader.addEventListener("click", () => {
+    const container = document.getElementById("chatbot-container");
+    const isCollapsed = container.style.maxHeight === "40px";
+    container.style.maxHeight = isCollapsed ? "400px" : "40px";
+  });
+</script>
+
+<!-- End of bot -->
+<h4>For copyright problems, email helpmeplease951@yahoo.com</h4>
