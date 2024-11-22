@@ -1,7 +1,7 @@
 body {
   font-family: 'Comic Neue', sans-serif;
   text-align: center;
-  background-image: url('/path/to/Murica2.gif'); /* Replace with the actual path */
+  background-image: url('Murica2.gif'); /* Replace with the actual path */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
