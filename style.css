@@ -1,0 +1,14 @@
+body {
+  font-family: 'Comic Neue', sans-serif;
+  text-align: center;
+  background-image: url('/path/to/Murica2.gif'); /* Replace with the actual path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
