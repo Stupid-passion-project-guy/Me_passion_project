@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adam’s Passion Project</title>
   <link rel="icon" href="download.png" type="image/png">
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <style>
+    @font-face {
+ }
+
+
     body {
-      font-family: 'Comic Neue', sans-serif;
+      font-family: 'Helvetica', sans-serif;
       text-align: center;
       background-color: black;
       color: white;
@@ -17,12 +22,14 @@
       flex-direction: column;
       align-items: center;
     }
+
     h1, h2, h3 {
       color: white;
     }
     h3 {
       color: #FF9500;
     }
+
     nav {
       margin-bottom: 20px;
     }
@@ -38,12 +45,14 @@
     nav a:hover {
       background-color: #FF9500;
     }
+
     .game-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
     }
+
     .game-button {
       background-color: #1a1a1a;
       color: white;
@@ -59,11 +68,12 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      font-family: 'Comic Neue', sans-serif;
     }
+
     .game-button:hover {
       background-color: #FF9500;
     }
+
     .random-button {
       background-color: #1a1a1a;
       color: white;
@@ -75,9 +85,11 @@
       font-size: 16px;
       margin-top: 20px;
     }
+
     .random-button:hover {
       opacity: 0.75;
     }
+
     #chatbot-container {
       background-color: #1a1a1a;
       color: white;
@@ -91,28 +103,33 @@
       margin-top: 20px;
       transition: max-height 0.3s ease;
     }
+
     #chatbot-header {
       background-color: #FF9500;
       padding: 10px;
       text-align: center;
       cursor: pointer;
     }
+
     #chatbot-messages {
       flex: 1;
       padding: 10px;
       overflow-y: auto;
     }
+
     #chatbot-input-container {
       display: flex;
       padding: 10px;
       background-color: #1a1a1a;
     }
+
     #chatbot-input {
       flex: 1;
       padding: 5px;
       border: 1px solid #FF9500;
       border-radius: 5px;
     }
+
     #chatbot-send {
       margin-left: 5px;
       padding: 5px 10px;
@@ -130,17 +147,16 @@
 
   <nav>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSepODwodpd9BccmLqWlnkRr0r3QpigU-TmtBQ2SF2wLzssXcg/viewform?usp=sf_link" target="_blank">Game Request Form</a>
+    <a href="themes.html">Themes</a> 
   </nav>
 
   <div id="game-launcher" class="game-container">
-    <!-- Game Buttons -->
     <button class="game-button" onclick="launchGame('https://frivez.com/')">Frivez</button>
     <button class="game-button" onclick="launchGame('https://sites.google.com/view/games-az/slope')">Slope</button>
     <button class="game-button" onclick="launchGame('https://shsgames.github.io/#google_vignette')">SHS Games</button>
     <button class="game-button" onclick="launchGame('https://experimonkey.com/')">Experimonkey</button>
     <button class="game-button" onclick="launchGame('https://arcadespot.com/')">Arcade Spot</button>
     <button class="game-button" onclick="launchGame('https://retrobowl.me/')">Retro Bowl</button>
-    <button class="game-button" onclick="launchGame('https://thepizzaedition.github.io/g/')">The Pizza Edition</button>
     <button class="game-button" onclick="launchGame('https://slopeio.org/')">Slope.io</button>
     <button class="game-button" onclick="launchGame('https://retrogames.cc/#google_vignette')">Retro Games</button>
     <button class="game-button" onclick="launchGame('https://scratch.mit.edu/')">Scratch</button>
@@ -149,100 +165,145 @@
     <button class="game-button" onclick="launchGame('https://scuffeduno.online/menu/main')">Scuffed Uno</button>
     <button class="game-button" onclick="launchGame('https://iogames.onl/')">IO Games</button>
     <button class="game-button" onclick="launchGame('https://slopeonline.online/')">Slope Online</button>
+    <button class="game-button" onclick="launchGame('https://vegamoviehd.net.online/')">Shut up Ellie</button>
+    <button class="game-button" onclick="launchGame('https://stumbleguys.com/play')">Open Stumble Guys</button>
+    <button class="game-button" onclick="launchGame('https://block-blast.io/#google_vignette')">Open Block Blast</button>
+    <button class="game-button" onclick="launchGame('https://www.hoodamath.com/#google_vignette&gsc.tab=0')">Open HoodaMath</button>
+    <button class="game-button" onclick="launchGame('https://chess.com')">Open Chess</button>
+    <button class="game-button" onclick="launchGame('https://theuselessweb.com')">Open The Useless Web</button>
+    <button class="game-button" onclick="launchGame('https://webecomewhatwebehold.io/games/best-games')">Open WBWWB.io</button>
+    <button class="game-button" onclick="launchGame('https://conartistgames.com/#games')">Open Con Artist Games</button>
+    <button class="game-button" onclick="launchGame('https://deathbyai.gg')">Open Death By AI</button>
+    <button class="game-button" onclick="launchGame('https://adarkroom.doublespeakgames.com/')">Open A Dark Room</button>
+    <button class="game-button" onclick="launchGame('https://oasis.decart.ai/welcome')">Open AI MInecraft</button>
+    <button class="game-button" onclick="launchGame('https://idleminingempire.com/hot-games')">Open IdleMiningEmpire Games</button>
+    <button class="game-button" onclick="launchGame('https://kbhgames.com/#google_vignette')">Open KBH Games</button>
+    <button class="game-button" onclick="launchGame('https://www.construct.net/en/free-online-games')">Open Construct Games</button>
+    <button class="game-button" onclick="launchGame('https://247pool.com')">Open 247 Pool</button>
+    <button class="game-button" onclick="launchGame('https://unblockedcookieclicker.org/#button')">Open Cookie Clicker</button>
+    <button class="game-button" onclick="launchGame('https://2048cupcakes.co.uk/#google_vignette')">Open Cupcake 2048</button>
+    <button class="game-button" onclick="launchGame('https://polytrackgame.com')">Open Polytrack</button>
   </div>
 
   <button class="random-button" onclick="goToRandomLink()">Play a Random Game</button>
 
-
-<!-- Chatbot Section -->
-<div id="chatbot-container">
-  <div id="chatbot-header">Chat with da bot!</div>
-  <div id="chatbot-messages"></div>
-  <div id="chatbot-input-container">
-    <input id="chatbot-input" type="text" placeholder="Type a message...">
-    <button id="chatbot-send">>Click<</button>
+  <div id="chatbot-container">
+    <div id="chatbot-header">Chat with da bot!</div>
+    <div id="chatbot-messages"></div>
+    <div id="chatbot-input-container">
+      <input id="chatbot-input" type="text" placeholder="Type a message...">
+      <button id="chatbot-send">>Click<</button>
+    </div>
   </div>
-</div>
 
-<script>
-  function launchGame(url) {
-    window.open(url, '_blank');
-  }
+  <script>
+    function launchGame(url) {
+      window.open(url, '_blank');
+    }
 
-  const gameLinks = [
-    "https://frivez.com/",
+    const gameLinks = [
+         "https://frivez.com/",
     "https://sites.google.com/view/games-az/slope",
     "https://shsgames.github.io/#google_vignette",
     "https://experimonkey.com/",
     "https://arcadespot.com/",
     "https://retrobowl.me/",
+    "https://thepizzaedition.github.io/g/",
     "https://slopeio.org/",
-    "https://retrogames.cc/#google_vignette"
-  ];
+    "https://retrogames.cc/#google_vignette",
+    "https://scratch.mit.edu/",
+    "https://games-and-stuff.vercel.app/",
+    "https://geometryspot.com/activities/",
+    "https://scuffeduno.online/menu/main",
+    "https://iogames.onl/",
+    "https://slopeonline.online/",
+    "https://vegamoviehd.net.online/",
+    "https://stumbleguys.com/play",
+    "https://block-blast.io/#google_vignette",
+    "https://www.hoodamath.com/#google_vignette&gsc.tab=0",
+    "https://chess.com",
+    "https://theuselessweb.com",
+    "https://webecomewhatwebehold.io/games/best-games",
+    "https://conartistgames.com/#games",
+    "https://deathbyai.gg",
+    "https://adarkroom.doublespeakgames.com/",
+    "https://oasis.decart.ai/welcome",
+    "https://idleminingempire.com/hot-games",
+    "https://kbhgames.com/#google_vignette",
+    "https://www.construct.net/en/free-online-games",
+    "https://247pool.com",
+    "https://unblockedcookieclicker.org/#button",
+    "https://2048cupcakes.co.uk/#google_vignette",
+    "https://polytrackgame.com"
+    ];
 
-  function goToRandomLink() {
-    const randomIndex = Math.floor(Math.random() * gameLinks.length);
-    window.open(gameLinks[randomIndex], '_blank');
-  }
-
-  const chatbotMessages = document.getElementById("chatbot-messages");
-  const chatbotInput = document.getElementById("chatbot-input");
-  const chatbotSend = document.getElementById("chatbot-send");
-  const chatbotHeader = document.getElementById("chatbot-header");
-
-  const responses = {
-    greeting: ["Hi there!", "Hello!", "Hey! What's up?", "Hi!"],
-    farewell: ["Goodbye!", "See you later!", "Take care!", "Bye!"],
-    jokes: [
-      "Why don't scientists trust atoms? Because they make up everything!",
-      "Why was the math book sad? It had too many problems.",
-      "Why did the scarecrow win an award? Because he was outstanding in his field!",
-      "Why did the tomato turn red? Because it saw the salad dressing!",
-      "What do you call fake spaghetti? An impasta!"
-    ],
-    default: [
-      "That's interesting!",
-      "I don't know about that.",
-      "Can you tell me more?",
-      "I don't know how to respond to that.",
-      "I wasn't programmed to respond to that."
-    ]
-  };
-
-  function addMessage(content, isUser = false) {
-    const message = document.createElement("div");
-    message.textContent = content;
-    message.style.margin = "5px 0";
-    message.style.textAlign = isUser ? "right" : "left";
-    chatbotMessages.appendChild(message);
-    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-  }
-
-  chatbotSend.addEventListener("click", () => {
-    const userMessage = chatbotInput.value.trim();
-    if (!userMessage) return;
-    addMessage(userMessage, true);
-    chatbotInput.value = "";
-
-    let response;
-    if (userMessage.toLowerCase().includes("hi") || userMessage.toLowerCase().includes("hello")) {
-      response = responses.greeting[Math.floor(Math.random() * responses.greeting.length)];
-    } else if (userMessage.toLowerCase().includes("bye")) {
-      response = responses.farewell[Math.floor(Math.random() * responses.farewell.length)];
-    } else if (userMessage.toLowerCase().includes("joke") || userMessage.toLowerCase().includes("funny")) {
-      response = responses.jokes[Math.floor(Math.random() * responses.jokes.length)];
-    } else {
-      response = responses.default[Math.floor(Math.random() * responses.default.length)];
+    function goToRandomLink() {
+      const randomIndex = Math.floor(Math.random() * gameLinks.length);
+      window.open(gameLinks[randomIndex], '_blank');
     }
-    setTimeout(() => addMessage(response), 500);
-  });
 
-  chatbotHeader.addEventListener("click", () => {
-    const container = document.getElementById("chatbot-container");
-    const isCollapsed = container.style.maxHeight === "40px";
-    container.style.maxHeight = isCollapsed ? "400px" : "40px";
-  });
-</script>
+    const chatbotMessages = document.getElementById("chatbot-messages");
+    const chatbotInput = document.getElementById("chatbot-input");
+    const chatbotSend = document.getElementById("chatbot-send");
+    const chatbotHeader = document.getElementById("chatbot-header");
 
-<!-- End of bot -->
-<h4>For copyright problems, email helpmeplease951@yahoo.com</h4>
+    const responses = {
+      greeting: ["Hi there!", "Hello!", "Hey! What's up?", "Hi!"],
+      farewell: ["Goodbye!", "See you later!", "Take care!", "Bye!"],
+      jokes: [
+        "Why don't scientists trust atoms? Because they make up everything!",
+        "Why was the math book sad? It had too many problems.",
+        "Why did the scarecrow win an award? Because he was outstanding in his field!",
+        "Why did the tomato turn red? Because it saw the salad dressing!",
+        "What do you call fake spaghetti? An impasta!",
+        "When your mom jumped in the ocean the whales started singing; 'we are family'",
+        "You, you are the joke",
+      ],
+      default: [
+        "That's interesting!",
+        "I don't know about that.",
+        "Can you tell me more?",
+        "I don't know how to respond to that.",
+        "I wasn't programmed to respond to that.",
+        "What?",
+        "I don't know what that means.",
+        "Can you >not< tell me more?",
+        "Well anyways, my dad left me when I was young."
+      ]
+    };
+
+    chatbotSend.addEventListener("click", () => {
+      const userMessage = chatbotInput.value.trim();
+      if (!userMessage) return;
+      addMessage(userMessage, true);
+      chatbotInput.value = "";
+
+      let response;
+      if (userMessage.toLowerCase().includes("hi") || userMessage.toLowerCase().includes("hello")) {
+        response = responses.greeting[Math.floor(Math.random() * responses.greeting.length)];
+      } else if (userMessage.toLowerCase().includes("bye")) {
+        response = responses.farewell[Math.floor(Math.random() * responses.farewell.length)];
+      } else if (userMessage.toLowerCase().includes("joke")) {
+        response = responses.jokes[Math.floor(Math.random() * responses.jokes.length)];
+      } else {
+        response = responses.default[Math.floor(Math.random() * responses.default.length)];
+      }
+      addMessage(response, false);
+    });
+
+    function addMessage(message, isUser) {
+      const messageDiv = document.createElement("div");
+      messageDiv.classList.add(isUser ? "user-message" : "bot-message");
+      messageDiv.textContent = message;
+      chatbotMessages.appendChild(messageDiv);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    chatbotHeader.addEventListener("click", () => {
+      const chatbotContainer = document.getElementById("chatbot-container");
+      const currentHeight = chatbotContainer.style.maxHeight;
+      chatbotContainer.style.maxHeight = currentHeight === "400px" ? "0" : "400px";
+    });
+  </script>
+</body>
+</html>
